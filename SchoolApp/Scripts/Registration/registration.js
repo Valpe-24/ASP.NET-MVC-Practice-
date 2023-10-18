@@ -152,7 +152,7 @@ function submit() {
         type: 'POST',
         url: '/Auth/Register',
         data: inputData,
-        success: function (response) {
+        success: function(response) {
 
             console.log(response);
 

@@ -28,7 +28,7 @@ namespace SchoolApp.Controllers
             return View();
         }
 
-        private bool IsValidUser(string username, string password)
+        public bool IsValidUser(string username, string password)
         {
             var filter = Builders<User>.Filter.Eq(u => u.Username, username);
             var user = _context.User.Find(filter).SingleOrDefault();
@@ -109,6 +109,10 @@ namespace SchoolApp.Controllers
             else if (!user.validatePassword())
             {
                 return Content("password");
+            }
+            else if (user.validateRole())
+            {
+                return Content("role");
             }
             else
             {
