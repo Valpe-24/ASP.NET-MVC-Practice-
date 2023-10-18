@@ -1,0 +1,107 @@
+﻿﻿@model SchoolApp.Models.User
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>School App</title>
+    <script src="~/Scripts/Registration/registration.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/Registration-style/Registration-style.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+</head>
+
+<body>
+    <form id="registrationForm" class="form-horizontal">
+        <h4>Sign up</h4>
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Name">Name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="Name" name="Name" placeholder="John" onkeypress="BlockNumbers(event);" onkeyup="Fullname_keyup(this, 'Not a valid name');">
+                <span class="validation-error"></span>
+                <span id="nameErrorMsg" style="color: red; display:none">Name must contain more than 3 characters</span>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Lastname">Last name</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="Lastname" name="Lastname" placeholder="Doe" onkeypress="BlockNumbers(event);" onkeyup="Fullname_keyup(this, 'Not a valid Last name');">
+                <span class="validation-error"></span>
+                <span id="lastNameErrorMsg" style="color: red; display: none"> Last name must contain more than 3 characters</span>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Username">Username</label>
+            <div class="col-md-10">
+                <input type="text" class="form-control" id="Username" name="Username" placeholder="jDoe123" onkeyup="User_keyup(this);">
+                <span id="username-validation-error"></span>
+                <span id="userErrorMsg" style="color: red; display: none">Username must be 5-8 characters long and include numbers</span>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Password">Password</label>
+            <div class="col-md-10">
+                <input type="password" class="form-control" id="Password" name="Password" placeholder="Password" onkeyup="Pass_keyup();">
+                <span id="password-validation-error"></span>
+                <span id="passwordErrorMsg" style="color: red; display: none">Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit</span>
+
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password" style="display:none;" onkeyup="ConfirmPass_keyup();" />
+                <span id="ConfirmPassword-validation-error"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Email">Email</label>
+            <div class="col-md-10">
+                <input type="email" class="form-control" id="Email" name="Email" placeholder="John.Doe@example.com" onkeyup="Email_keyup(this);">
+                <span id="email-validation-error"></span>
+                <span id="emailErrorMsg" style="color: red; display: none">No a valid email address</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Role">Select your role</label>
+            <div class="col-md-10">
+                <select id="role" name="role" class="form-select" onclick="RoleValidation();">
+                    <option value="">Select a role</option>
+                    <option value="0">Teacher</option>
+                    <option value="1">Student</option>
+                </select>
+                <span id="role-validation-error"></span>
+                <span id="roleErrorMsg" style="color: red; display: none">Please select a role</span>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="button" class="btn btn-outline-success" id="registrationBttn" onclick="submit();">Register</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+

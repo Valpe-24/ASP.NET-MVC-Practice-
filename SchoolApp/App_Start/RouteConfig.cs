@@ -18,6 +18,39 @@ namespace SchoolApp
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "Login",
+                url: "Auth/Login",
+                defaults: new { controller = "Auth", action = "Login" }
+            );
+
+            routes.MapRoute(
+                name: "Logout",
+                url: "Auth/Logout",
+                defaults: new { controller = "Auth", action = "Logout" }
+            );
+
+            routes.MapRoute(
+                name: "Register",
+                url: "Auth/Register",
+                defaults: new { controller = "Auth", action = "Register" }
+            );
+
+
+            routes.MapRoute(
+                name: "StudentDashboard",
+                url: "Dashboard/{userId}",
+                defaults: new { controller = "Dashboard", action = "Index", userId = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "TeacherDashboard",
+                url: "Dashboard/{userId}",
+                defaults: new { controller = "Dashboard", action = "Index", userId = UrlParameter.Optional }
+            );
+
+
+
         }
     }
 }
