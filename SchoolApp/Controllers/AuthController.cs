@@ -110,15 +110,14 @@ namespace SchoolApp.Controllers
             {
                 return Content("password");
             }
-            else if (user.validateRole())
+            else if (!user.validateRole())
             {
                 return Content("role");
             }
             else
             {
-                string inputPassword = user.Password;
                 string salt = BCrypt.Net.BCrypt.GenerateSalt(12);
-                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(inputPassword, salt);
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password, salt);
 
                 var NewUser = new User()
                 {
@@ -129,7 +128,6 @@ namespace SchoolApp.Controllers
                     Salt = salt,
                     Email = user.Email,
                     Role = user.Role,
-
                 };
                 _context.User.InsertOne(NewUser);
                 return Content("0");

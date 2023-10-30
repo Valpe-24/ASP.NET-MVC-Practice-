@@ -1,0 +1,48 @@
+﻿@model SchoolApp.Models.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>School App</title>
+    <script src="~/Scripts/Login/Login.js"></script>
+</head>
+
+<body>
+    <form id="loginForm" >
+
+        <div class="form-horizontal">
+            <h4>Log in</h4>
+            <hr />
+
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Username">Username</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="Username" name="Username" placeholder="jDoe123">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Password">Password</label>
+                <div class="col-md-10">
+                    <input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Log in" class="btn btn-outline-primary" onclick="login();" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+
