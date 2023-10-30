@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.error-text {
+    color: mediumpurple;
+    font-size: 12px;
+}
+
+.error-text-red {
+    color: darkred;
+    font-size: 12px;
+}
+

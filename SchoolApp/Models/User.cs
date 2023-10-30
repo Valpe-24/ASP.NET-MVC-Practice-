@@ -1,6 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System.ComponentModel.DataAnnotations;
 using SchoolApp.Utils;
 using System.Text.RegularExpressions;
 
@@ -12,17 +11,15 @@ namespace SchoolApp.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId Id { get; set; }
         public string Username { get; set; }
-
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string Salt { get; set; }
         public string Name { get; set; }
-
         public string Lastname { get; set; }
-
         public string Email { get; set; }
-        
         public UserRole Role { get; set; }
+
+
 
         public bool validateName()
         {
